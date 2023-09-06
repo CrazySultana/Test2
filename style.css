@@ -1,0 +1,312 @@
+
+body{
+    background-color: #E3E7E8;
+    font-family: system-ui;
+}
+.container{
+    max-width: 100%;
+    margin: auto;
+    transition: 0.5s;
+}
+header{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+}
+h2{
+    border-radius: 70px;
+    background-color: burlywood;
+    text-align: center;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 60px;
+}
+.begin a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+    
+    ;
+}
+.begin a:hover{
+    background-color: #E3BB9D;
+}
+
+h1{
+    text-align:center;
+    color:black;
+    font-size:90px;
+
+}
+header .shopping{
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+header .shopping img{
+    width: 40px;
+    position: absolute;
+    top: -300%;
+    left: 140%;
+   
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -300%;
+    left: 150%;
+    padding: 3px 10px;
+}
+.list, .list2, .list3, .list4 {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+}
+@media only screen and (max-width:1100px) {
+    .list, .list2, .list3, .list4 {
+        display:inline;
+    }
+    .begin a{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size:15px;
+        
+        
+    }
+    header .shopping img{
+       
+        top: -200%;
+        left: 120%;
+       
+    }
+    header .shopping span{
+       
+        top: -200%;
+        left: 140%;
+    }
+    h2{
+            font-size: 30px;
+        }
+    h1{
+            font-size: 50px;
+        }
+        .active .card{
+            left: 1000px;
+        }
+        .active .container{
+            transform: translateY(-100px);
+         }
+        .card{
+            margin: 0%;
+            padding: 7%;
+            box-sizing: border-box;
+            max-width: 500px;
+            min-height: 100vh;
+        } 
+        .card .checkOut button{
+           
+           max-width: auto;
+           height: 70px;
+           display: inline;
+
+            
+        }  
+        .card .checkOut{
+           
+            max-width: 100%;
+            display: inline;
+        }
+        .card .checkOut div{
+            max-width: auto;
+            height: 70px;
+            display: inline;
+
+          
+        }
+        .card h1{
+            font-weight: 50;
+            margin-left: 20%;
+            padding: 0 20px;
+            height: 80px;
+           font-size: 30px;
+        }
+  }
+  
+.list .item, .list2 .item, .list3 .item, .list4 .item{
+    text-align: center;
+    background-color: #DCE0E1;
+    padding: 20px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+}
+.list .item img, .list2 .item img, .list3 .item img, .list4 .item img{
+    width: 90%;
+    height: 430px;
+    object-fit: cover;
+}
+.list .item .title, .list2 .item .title, .list3 .item .title, .list4 .item .title{
+    font-weight: 600;
+}
+.list .item .price, .list2 .item .price, .list3 .item .price, .list4 .item .price{
+    margin: 10px;
+    
+}
+.list .item button, .list2 .item button, .list3 .item button, .list4 .item button{
+    background-color: #1C1F25;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+.card{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: 0.5s;
+}
+.active .card{
+    left: calc(100% - 500px);
+}
+.active .container{
+   transform: translateX(-200px);
+}
+.card h1{
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.card .checkOut{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut button{
+    background-color: #E8BC0E;
+    border: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div{
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(4){
+    background-color: #1C1F25;
+    color: #fff;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+.listCard li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
+
+
+.refresh button{
+ display:flex;
+ position: fixed;
+justify-content: center;
+margin-left:950px;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  width: 12.5%;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc; /* add this line */
+  border-radius: 10px; /* add this line */
+  font-size: 20px; /* add this line */
+
+}
+.listOfOrders{
+    border-radius: 100px;
+    font-size:50px;
+    color:black;
+text-align:center;
+padding:20px;
+}
+.listOfOrders{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+    font-size: 25px;
+}
+.listOfOrders .order{
+    text-align: center;
+    background-color: #DCE0E1;
+    padding: 20px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+}
+.listOfOrders .order img{
+    width: 90%;
+    height: 430px;
+    object-fit: cover;
+}
+.listOfOrders .order .title{
+    font-weight: 600;
+}
+.listOfOrders .order .price{
+    margin: 10px;
+    
+}
+.listOfOrders .order .quantity{
+    margin: 10px;
+    
+}
+.listOfOrders .order button{
+    background-color: #1C1F25;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
