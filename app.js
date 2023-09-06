@@ -31,7 +31,7 @@ let products = [
     {
         id: 1,
         name: 'PRODUCT NAME 1',
-        image: '1.PNG',
+        image: 'https://images.pexels.com/photos/7048385/pexels-photo-7048385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         category: 'appetizer',
         price: 120000,
         tableNumber: 0
@@ -40,7 +40,7 @@ let products = [
         id: 2,
         name: 'PRODUCT NAME 2',
         category: 'appetizer',
-        image: '2.PNG',
+        image: 'https://c8.alamy.com/comp/2H1818K/beauty-cosmetics-cream-bottles-skin-care-products-isolated-color-line-iconvector-body-hands-and-face-care-tubes-and-flower-lotion-and-moisturizer-c-2H1818K.jpg',
         price: 120000,
         tableNumber: 0
 
@@ -171,7 +171,7 @@ function initApp() {
         let productDiv = document.createElement('div');
         productDiv.classList.add('item');
         productDiv.innerHTML = `
-        <img src="image/${product.image}">
+        <img src="${product.image}"> <!-- src is used for local images  -->
         <div class="title">${product.name}</div>
         <div class="price">${product.price.toLocaleString()}</div>
         <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
