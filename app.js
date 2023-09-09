@@ -1,9 +1,9 @@
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
-let list = document.querySelector('.list');
-let list2 = document.querySelector('.list2');
-let list3 = document.querySelector('.list3');
-let list4 = document.querySelector('.list4');
+// let list = document.querySelector('.list');
+// let list2 = document.querySelector('.list2');
+// let list3 = document.querySelector('.list3');
+// let list4 = document.querySelector('.list4');
 
 let listCard = document.querySelector('.listCard');
 let TrackOrder = document.querySelector('.TrackOrder');
@@ -12,10 +12,10 @@ let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 
-openShopping.addEventListener('click', ()=>{
+openShopping.addEventListener('click', () => {
     body.classList.add('active');
 });
-closeShopping.addEventListener('click', ()=>{
+closeShopping.addEventListener('click', () => {
     body.classList.remove('active');
 });
 
@@ -25,148 +25,167 @@ newDiv1.innerHTML = `
     <div>
         <button onclick="reloadOrders()">Place Order</button>
     </div>`;
-    placeOrder.appendChild(newDiv1);
+placeOrder.appendChild(newDiv1);
 
 let products = [
     {
         id: 1,
         name: 'PRODUCT NAME 1',
-        image: '1.PNG',
-        category:'appetizer',
+        image: 'https://images.pexels.com/photos/7048385/pexels-photo-7048385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        category: 'appetizer',
         price: 120000,
-        tableNumber:0
+        tableNumber: 0
     },
     {
         id: 2,
         name: 'PRODUCT NAME 2',
-        category:'appetizer',
-        image: '2.PNG',
+        category: 'appetizer',
+        image: 'https://c8.alamy.com/comp/2H1818K/beauty-cosmetics-cream-bottles-skin-care-products-isolated-color-line-iconvector-body-hands-and-face-care-tubes-and-flower-lotion-and-moisturizer-c-2H1818K.jpg',
         price: 120000,
-        tableNumber:0
+        tableNumber: 0
 
     },
     {
         id: 3,
         name: 'PRODUCT NAME 3',
         image: '3.PNG',
-        category:'main',
+        category: 'main',
         price: 220000,
-        tableNumber:0
+        tableNumber: 0
 
     },
     {
         id: 4,
         name: 'PRODUCT NAME 4',
         image: '4.PNG',
-        category:'main',
+        category: 'main',
         price: 123000,
-        tableNumber:0
+        tableNumber: 0
 
     },
     {
         id: 5,
         name: 'PRODUCT NAME 5',
         image: '5.PNG',
-        category:'main',
+        category: 'main',
         price: 320000,
-        tableNumber:0
+        tableNumber: 0
 
     },
     {
         id: 6,
         name: 'PRODUCT NAME 6',
         image: '6.PNG',
-        category:'main',
+        category: 'main',
         price: 120000,
-        tableNumber:0
+        tableNumber: 0
 
     },
-     {
+    {
         id: 7,
         name: 'PRODUCT NAME 7',
         image: '7.PNG',
-        category:'dessert',
+        category: 'dessert',
         price: 120000,
-        tableNumber:0
+        tableNumber: 0
 
     }, {
         id: 8,
         name: 'PRODUCT NAME 8',
         image: '8.PNG',
-        category:'dessert',
+        category: 'dessert',
         price: 120000,
-        tableNumber:0
+        tableNumber: 0
 
     }, {
         id: 9,
         name: 'PRODUCT NAME 9',
         image: '9.PNG',
-        category:'drinks',
+        category: 'drinks',
         price: 120000,
-        tableNumber:0
+        tableNumber: 0
 
     }, {
         id: 10,
         name: 'PRODUCT NAME 10',
         image: '10.PNG',
-        category:'drinks',
+        category: 'drinks',
         price: 120000,
-        tableNumber:0
+        tableNumber: 0
 
     }
 ];
-let listCards  = [];
-let listedOrders  = [];
+let listCards = [];
+let listedOrders = [];
 
-function initApp(){
-    products.forEach((value, key) =>{
-        if(value.category=='appetizer'){
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('item');
-        newDiv.innerHTML = `
-            <img src="image/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
-            <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
-        list.appendChild(newDiv);
-    }})
-    products.forEach((value, key) =>{
-         if(value.category=='main'){
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('item');
-        newDiv.innerHTML = `
-            <img src="image/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
-            <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
-        list2.appendChild(newDiv);
-   } })
-    products.forEach((value, key) =>{
-         if(value.category=='dessert'){
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('item');
-        newDiv.innerHTML = `
-            <img src="image/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
-            <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
-        list3.appendChild(newDiv);
-    }})
-    products.forEach((value, key) =>{
-         if(value.category=='drinks'){
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('item');
-        newDiv.innerHTML = `
-            <img src="image/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
-            <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
-        list4.appendChild(newDiv);
-    }})
+function initApp() {
+    // products.forEach((value, key) => {
+    //     if (value.category == 'appetizer') {
+    //         let newDiv = document.createElement('div');
+    //         newDiv.classList.add('item');
+    //         newDiv.innerHTML = `
+    //         <img src="image/${value.image}">
+    //         <div class="title">${value.name}</div>
+    //         <div class="price">${value.price.toLocaleString()}</div>
+    //         <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
+    //         list.appendChild(newDiv);
+    //     }
+    // })
+    // products.forEach((value, key) => {
+    //     if (value.category == 'main') {
+    //         let newDiv = document.createElement('div');
+    //         newDiv.classList.add('item');
+    //         newDiv.innerHTML = `
+    //         <img src="image/${value.image}">
+    //         <div class="title">${value.name}</div>
+    //         <div class="price">${value.price.toLocaleString()}</div>
+    //         <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
+    //         list2.appendChild(newDiv);
+    //     }
+    // })
+    // products.forEach((value, key) => {
+    //     if (value.category == 'dessert') {
+    //         let newDiv = document.createElement('div');
+    //         newDiv.classList.add('item');
+    //         newDiv.innerHTML = `
+    //         <img src="image/${value.image}">
+    //         <div class="title">${value.name}</div>
+    //         <div class="price">${value.price.toLocaleString()}</div>
+    //         <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
+    //         list3.appendChild(newDiv);
+    //     }
+    // })
+    // products.forEach((value, key) => {
+    //     if (value.category == 'drinks') {
+    //         let newDiv = document.createElement('div');
+    //         newDiv.classList.add('item');
+    //         newDiv.innerHTML = `
+    //         <img src="image/${value.image}">
+    //         <div class="title">${value.name}</div>
+    //         <div class="price">${value.price.toLocaleString()}</div>
+    //         <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
+    //         list4.appendChild(newDiv);
+    //     }
+    // })
+    products.forEach((product, key) => {
+        let productDiv = document.createElement('div');
+        productDiv.classList.add('item');
+        productDiv.innerHTML = `
+        <img src="${product.image}"> <!-- src is used for local images  -->
+        <div class="title">${product.name}</div>
+        <div class="price">${product.price.toLocaleString()}</div>
+        <button style="font-size: 20px;" onclick="addToCard(${key})">Add To Cart</button>`;
+        if (!product.category) return // skip if no category 
+
+        const parentDiv = document.getElementsByClassName(product.category)[0]
+        if (parentDiv) parentDiv.appendChild(productDiv)
+    },
+    );
+
 }
 initApp();
-function addToCard(key){
-    if(listCards[key] == null){
+function addToCard(key) {
+    if (listCards[key] == null) {
         // copy product form list to list card
         listCards[key] = JSON.parse(JSON.stringify(products[key]));
         listCards[key].quantity = 1;
@@ -174,14 +193,14 @@ function addToCard(key){
     reloadCard();
 }
 
-function reloadCard(){
+function reloadCard() {
     listCard.innerHTML = '';
     let count = 0;
     let totalPrice = 0;
-    listCards.forEach((value, key)=>{
+    listCards.forEach((value, key) => {
         totalPrice = totalPrice + value.price;
         count = count + value.quantity;
-        if(value != null){
+        if (value != null) {
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
                 <div><img src="image/${value.image}"/></div>
@@ -192,41 +211,42 @@ function reloadCard(){
                     <div class="count">${value.quantity}</div>
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
                 </div>`;
-                listCard.appendChild(newDiv);
+            listCard.appendChild(newDiv);
         }
     })
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
 }
 
-function getdata(listCards){
-    fetch("http://localhost:3000/orders",{
+function getdata(listCards) {
+    fetch("http://localhost:3000/orders", {
         method: 'POST',
-        headers:{
+        headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(listCards),
-        mode: 'cors'})
-    .then(rep => rep.json())
-    .then(data =>{
- //const postArrayJson = new JSONArray(data);
-delete data;
-       /* for (var x=0; x< (listCards.length); x++){
-        data.orders.push({
-        name: 'listCards[x].name',
-        image: 'listCards[x].image',
-        price:'listCards[x].price',
-        tableNumber:0
-        }
-       
-        );
-        }
-                for (var x in (data.rows)){
-            delete data.rows[i]
-        }
-        */
-        console.log(data);
-    });
+        mode: 'cors'
+    })
+        .then(rep => rep.json())
+        .then(data => {
+            //const postArrayJson = new JSONArray(data);
+            delete data;
+            /* for (var x=0; x< (listCards.length); x++){
+             data.orders.push({
+             name: 'listCards[x].name',
+             image: 'listCards[x].image',
+             price:'listCards[x].price',
+             tableNumber:0
+             }
+            
+             );
+             }
+                     for (var x in (data.rows)){
+                 delete data.rows[i]
+             }
+             */
+            console.log(data);
+        });
 }
 
 
@@ -235,38 +255,38 @@ delete data;
 
 
 
-function reloadOrders(){
-    products.forEach((value) =>{
-        value.tableNumber=document.getElementById('table').value;
+function reloadOrders() {
+    products.forEach((value) => {
+        value.tableNumber = document.getElementById('table').value;
     })
     getdata(listCards);
     window.alert("Order Placed Successfully");
-    for(let x in listCards){
+    for (let x in listCards) {
         delete listCards[x];
     }
 
- /*   const table=document.getElementById('table').value;
-    if (typeof(Storage) !== "undefined"){
-    localStorage.clear();
-    localStorage.setItem("listCards",JSON.stringify(listCards));
-    localStorage.setItem("tableNo",table);
-
-    window.alert("Order Placed Successfully");
-    for(let x in listCards){
-        delete listCards[x];
-    }
+    /*   const table=document.getElementById('table').value;
+       if (typeof(Storage) !== "undefined"){
+       localStorage.clear();
+       localStorage.setItem("listCards",JSON.stringify(listCards));
+       localStorage.setItem("tableNo",table);
+   
+       window.alert("Order Placed Successfully");
+       for(let x in listCards){
+           delete listCards[x];
+       }
+   }
+   else { window.alert("Error Placing Order");}*/
 }
-else { window.alert("Error Placing Order");}*/
-}
 
 
 
 
 
-function changeQuantity(key, quantity){
-    if(quantity == 0){
+function changeQuantity(key, quantity) {
+    if (quantity == 0) {
         delete listCards[key];
-    }else{
+    } else {
         listCards[key].quantity = quantity;
         listCards[key].price = quantity * products[key].price;
     }
